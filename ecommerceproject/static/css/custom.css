@@ -1,0 +1,229 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+/*Navbar*/
+
+.nav-item{
+    letter-spacing = .2em;
+    font-size = 14px;
+    text-transform = uppercase;
+}
+.dropdown-item{
+    letter-spacing = .2em;
+    font-size = 14px;
+    text-transform = uppercase;
+}
+
+.my_footer p{
+    padding-top: 20px;
+    font-size: 14px;
+}
+.my_footer{
+    background-color: #ffffe6;
+    height = 60px;
+}
+/** Category **/
+.my_row_class{
+    padding-top: 15px;
+}
+.my_row_class .mx-auto{
+    color:#000;
+    font-size : 12 px;
+}
+.my_image{
+    width : auto;
+    weight : 100%;
+}
+.my_title{
+   font-size : 16px;
+   text_transform : uppercase;
+   letter-spacing : .2em;
+}
+.my_image_padding{
+padding : 5 px;
+}
+.my_bottom_margin{
+   margin-bottom = 10 px;
+}
+
+.card-body h4
+{
+font-size=14px;
+text_transform=uppercase;
+letter-spacing=.2em
+}
+/** Product Page **/
+.my_prod_row_class{
+    padding-top:15px;
+    padding-bottom:20px
+}
+.my_prod_row_class .mx_auto{
+   color:#000;
+   font-size:12px;
+   text-decoration:none;
+}
+
+.my_prod_row_class{
+    padding-top:15px;
+    padding-bottom:20px;
+}
+.my_prod_row_class .mx_auto{
+    color:#000;
+    font-size:12px;
+    text-decoration:none;
+}
+.my_prod_title{
+    font-size=16px;
+    text_transform:uppercase;
+    letter-spacing:.2em;
+    padding-top:15px;
+    padding-bottom:10px;
+}
+.my_prod_text{
+    padding-right:20px;
+
+}
+.my_search_text{
+padding-top:20px;
+}
+/** Cart **/
+.my_custom_table{
+    min-width:400px;
+    font-size:14px;
+}
+.my_custom_thead{
+    font-weight:normal;
+    text_transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#FDEBD0;
+}
+.custom_a{
+    text-decoration:none;
+}
+.custom_icon{
+    text-decoration:none;
+    color:#868e96 !important;
+}
+.my_custom_button{
+    margin-top:5px;
+}
+.fab {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa-facebook {
+  background: #808080;
+  color: white;
+}
+.fa-twitter {
+  background: #808080;
+  color: white;
+}
+.fa-google {
+  background: #808080;
+  color: white;
+}
+.fa-linkedin {
+  background: #808080;
+  color: white;
+}
+.fa-youtube {
+  background: #808080;
+  color: white;
+}
+.fa-instagram {
+  background: #808080;
+  color: white;
+}
+.fa-skype {
+  background: #808080;
+  color: white;
+}
+  /* Position the image container (needed to position the left and right arrows) */
+.containerimg {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  height: 250px;
+  width:1050px;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: 250px;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}

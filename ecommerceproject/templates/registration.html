@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Register and be a member in Baby Smile !!!!</h2>
+<form class="form-register" action="register" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your user name"><br><br>
+    <input type="text" name="first_name" placeholder="Enter your first name"><br><br>
+    <input type="text" name="last_name" placeholder="Enter your last name"><br><br>
+    <input type="email" name="email" placeholder="Enter your email"><br><br>
+    <input type="text" name="Contact" placeholder="Enter your Contact Number"><br><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="password" name="password1" placeholder="Password"><br><br>
+    <input type="submit" value="Register">
+
+</form>
+{% for message in messages %}
+{{message}}
+{% endfor %}
+</body>
+</html>

@@ -38,7 +38,11 @@
         <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
       <li class="nav-item">
-          <a class="nav-link" href="{% url 'registration:register' %}">Login/Sign Up</a>
+          <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'Contact_app:contact' %}">Contact Us</a>
       </li>
     </div>
   </div>

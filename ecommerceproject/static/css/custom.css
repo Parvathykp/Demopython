@@ -110,7 +110,8 @@ padding-top:20px;
 .fab {
   padding: 20px;
   font-size: 30px;
-  width: 50px;
+  width: 5px;
+  height:5px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
@@ -118,6 +119,8 @@ padding-top:20px;
 .fa-facebook {
   background: #808080;
   color: white;
+  width: 5px;
+  height:5px;
 }
 .fa-twitter {
   background: #808080;

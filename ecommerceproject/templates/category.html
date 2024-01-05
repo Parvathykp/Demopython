@@ -47,7 +47,7 @@ we embarked on a mission to redefine comfort, style, and sustainability in the g
 </div>
 <div class="container">
     <div class="row mx_auto">
-        {% for product in products %}
+        {% for product in products.object_list %}
         <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4">
 
             <div class="card text-center" style="min-width:18rem;">
@@ -64,11 +64,11 @@ we embarked on a mission to redefine comfort, style, and sustainability in the g
         {% endfor %}
     </div>
     <div class="mx-auto">
-        {% if product.paginator.num_pages > 1 %}
+        {% if products.paginator.num_pages > 1 %}
 
         <hr>
         <div class="text-center">
-            {% for pg in product.paginator.page_range %}
+            {% for pg in products.paginator.page_range %}
                 <a href="?page={{pg}}" class="btn btn-light btn-sm {% if product.number == pg %} active {% endif %}">{{pg}}</a>
             {% endfor %}
         </div>

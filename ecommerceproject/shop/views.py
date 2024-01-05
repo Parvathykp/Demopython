@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import product, Category
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
@@ -16,7 +17,7 @@ def allProdCat(request, c_slug=None):
     paginator = Paginator(products_list, 6)
     try:
         page = int(request.GET.get('page', '1'))
-    except :
+    except:
         page = 1
     try:
         products = paginator.page(page)

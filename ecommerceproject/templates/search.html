@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block metadescription %}
-   We have cariety of products
+   We have variety of products
 {% endblock %}
 {% block title %}
    Search
@@ -14,12 +14,13 @@
     </div>
 <div class="container">
     <div class="row mx_auto">
-        {% for product in products.objects_list %}
+        {% for product in products %}
         <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4">
 
             <div class="card text-center" style="min-width:18rem;">
 
-                <a href="{{product.get_url}}"> <img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}" width="250px" height="250"> </a>
+                <a href="{{product.get_url}}">
+                    <img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}" width="250px" height="250"> </a>
 
 
             <div class="card-body">

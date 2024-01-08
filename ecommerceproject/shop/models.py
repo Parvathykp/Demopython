@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -11,12 +12,10 @@ class Category(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='category', blank=True)
 
-
     class Meta:
         ordering = ('name',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
-
 
     def get_url(self):
         return reverse('shop:products_by_category', args=[self.slug])
@@ -48,5 +47,6 @@ class product(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+
 
 

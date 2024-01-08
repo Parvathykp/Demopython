@@ -34,7 +34,8 @@
 </div>
      {% else %}
 <div>
-    <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="Our Products"  width="1250 px" height="500px">
+    <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="Our Products"  width="500px" height="500px">
+    <img class="my_image my_image_padding" src="{% static 'img/banner3.png' %}" alt="Our Products"  width="500px" height="500px">
 </div>
 <br>
 <div>
@@ -52,7 +53,8 @@ we embarked on a mission to redefine comfort, style, and sustainability in the g
 
             <div class="card text-center" style="min-width:18rem;">
 
-                <a href="{{product.get_url}}"> <img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}" width="250px" height="250"> </a>
+                <a href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}" width="250px" height="250">
+                </a>
 
 
             <div class="card-body">

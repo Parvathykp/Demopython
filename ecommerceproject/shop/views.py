@@ -1,8 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import product, Category
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -33,3 +34,5 @@ def prodDetail(request, c_slug, product_slug):
     except Exception as e:
         raise e
     return render(request, 'product.html', {'product': products})
+
+

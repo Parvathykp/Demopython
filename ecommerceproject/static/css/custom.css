@@ -1,3 +1,4 @@
+{% static %}
 body{
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -104,48 +105,38 @@ padding-top:20px;
     text-decoration:none;
     color:#868e96 !important;
 }
+
 .my_custom_button{
     margin-top:5px;
 }
-.fab {
-  padding: 20px;
-  font-size: 30px;
-  width: 5px;
-  height:5px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
+
+.fa:hover {
+     opacity: 0.9;
 }
-.fa-facebook {
-  background: #808080;
-  color: white;
-  width: 5px;
-  height:5px;
-}
-.fa-twitter {
-  background: #808080;
-  color: white;
-}
-.fa-google {
-  background: #808080;
-  color: white;
-}
+
 .fa-linkedin {
-  background: #808080;
-  color: white;
+     background: #007bb5;
+     color: white;
 }
-.fa-youtube {
-  background: #808080;
-  color: white;
+
+.fa-pinterest {
+      background: #cb2027;
+      color: white;
 }
-.fa-instagram {
-  background: #808080;
-  color: white;
+
+.fa-reddit {
+       background: #ff5700;
+       color: white;
 }
-.fa-skype {
-  background: #808080;
-  color: white;
+
+.fa {
+       padding: 20px;
+       font-size: 40px;
+       width: 60px;
+       text-decoration: none;
+       margin: 5px 80px;
 }
+
   /* Position the image container (needed to position the left and right arrows) */
 .containerimg {
   position: relative;
@@ -229,4 +220,11 @@ padding-top:20px;
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+.contact-background{
+background-size: cover;
+background-position: center;
+background-image: url('{% static 'img/contact-background.jpg' %}');
+background-color: #ffffcc;
 }

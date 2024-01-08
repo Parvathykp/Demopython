@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -24,7 +25,14 @@ class CartItem(models.Model):
 
     class Meta:
         db_table = 'CartItem'
+
     def sub_total(self):
-        return self.product.price * product.quatity
+        return self.product.price * self.quatity
+
     def __str__(self):
         return '{}'.format(self.product)
+
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    products = models.ManyToManyField(product)

@@ -1,14 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" >
     <title>Contact</title>
+    <center>
+        <img src="{% static 'img/logo.png' %}" alt="logimage" width="100px" height="150px">
+        <h4>We are happy to address you</h4>
+    </center>
 </head>
-<body>
+<body class="contact-background" style="background-color: #f5fffa">
     <div style="margin:80px">
-        <h1 align="center">Contact Us</h1>
+        <h2 align="center">Contact Us</h2>
         <hr>
         <h4>Contact us directly if you have any queries. We will get in touch with you shortly.</h4>
         <hr>

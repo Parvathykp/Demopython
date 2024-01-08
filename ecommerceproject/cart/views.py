@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from shop.models import product
-from .models import Cart, CartItem
+from .models import Cart, CartItem, Wishlist
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -25,7 +26,7 @@ def add_cart(request, product_id):
         cart_item = CartItem.objects.get(product=products, cart=cart)
         if cart_item.quantity < cart_item.product.stock:
             cart_item.quantity += 1
-        cart_item.save()
+            cart_item.save()
     except ObjectDoesNotExist:
         cart_item = CartItem.objects.create(
             product=products,
@@ -64,5 +65,34 @@ def full_remove(request, product_id):
     cart = Cart.objects.get(cart_id=_cart_id(request))
     products = get_object_or_404(product, id=product_id)
     cart_item = CartItem.objects.get(product=products, cart=cart)
-    cart_item.remove()
+    cart_item.delete()
     return redirect('cart:cart_detail')
+
+
+def add_to_wishlist(request, product_id):
+    product_instance = product.objects.get(pk=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.products.add(product_instance)
+    wishlist1 = Wishlist.objects.filter(user=request.user).first()
+    wishlist_items = wishlist1.products.all() if wishlist else []
+    return render(request, 'product_list.html', {'wishlist_items': wishlist_items})
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    products = product.objects.get(pk=product_id)
+    Wishlist.objects.filter(user=request.user, products=products).delete()
+    return redirect('product_list.html')  # Redirect to wishlist page after removing
+
+
+@login_required
+def view_wishlist(request):
+    wishlist = Wishlist.objects.filter(user=request.user).first()
+    wishlist_items = wishlist.products.all() if wishlist else []
+    return render(request, 'product_list.html', {'wishlist_items': wishlist_items})
+
+
+@login_required
+def wishlist(request):
+    wishlist_items = Wishlist.objects.filter(user=request.user)
+    return render(request, 'product_list', {'wishlist_items': wishlist_items})

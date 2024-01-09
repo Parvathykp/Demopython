@@ -1,21 +1,22 @@
+
+{% load static %}
 <!-- wishlist.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>My Wishlist</title>
+    <center>
+        <img src="{% static 'img/logo.png' %}" alt="logimage" width="100px" height="150px">
+    </center>
 </head>
 <body>
     <h1>My Wishlist</h1>
     <ul>
         {% for item in wishlist_items %}
             <li>
-                {{ item.product.name }} - {{ item.product.price }}
-                {% if item.product.id %}
-                    <a href="{% url 'cart:remove_from_wishlist' product.id %}">Remove</a>
-                {% else %}
-                <!-- Handle the case when product ID is not available -->
-                    <span>Remove</span>
-                {% endif %}
+                {{ item }} - {{ item.price }} -
+<!--                <a href="{{item.get_absolute_url}}"><img src="{{item.image.url}}" alt="" style="width:100px;height:100px;" class="float-left rounded custom_image"></a>-->
+                    <a href="{% url 'cart:remove_from_wishlist' item.id %}">Remove</a>
             </li>
         {% endfor %}
     </ul>

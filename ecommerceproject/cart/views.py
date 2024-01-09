@@ -75,14 +75,23 @@ def add_to_wishlist(request, product_id):
     wishlist.products.add(product_instance)
     wishlist1 = Wishlist.objects.filter(user=request.user).first()
     wishlist_items = wishlist1.products.all() if wishlist else []
+    print(wishlist_items)
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    cart_item = CartItem.objects.get(product_id=product_instance, cart=cart)
+    cart_item.delete()
     return render(request, 'product_list.html', {'wishlist_items': wishlist_items})
 
 
 @login_required
 def remove_from_wishlist(request, product_id):
-    products = product.objects.get(pk=product_id)
-    Wishlist.objects.filter(user=request.user, products=products).delete()
-    return redirect('product_list.html')  # Redirect to wishlist page after removing
+    product_instance = get_object_or_404(product, pk=product_id)
+
+    wishlist_entry = Wishlist.objects.filter(user=request.user, products=product_instance).first()
+
+    if wishlist_entry:
+        wishlist_entry.delete()
+
+    return redirect('cart:wishlist')
 
 
 @login_required
@@ -95,4 +104,4 @@ def view_wishlist(request):
 @login_required
 def wishlist(request):
     wishlist_items = Wishlist.objects.filter(user=request.user)
-    return render(request, 'product_list', {'wishlist_items': wishlist_items})
+    return render(request, 'product_list.html', {'wishlist_items': wishlist_items})
